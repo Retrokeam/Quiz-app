@@ -22,9 +22,15 @@ void switchScreen(){
 } 
 
   Widget build(context){
-    var screenWidet = StartScreen(switchScreen);
+    Widget screenWidet = StartScreen(switchScreen);
+    
+    if (activeScreen == "questions-screen") {
+       screenWidet = const QuestionsScreen();
 
-    return  MaterialApp( 
+    }
+   
+
+    return  MaterialApp(  
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -37,9 +43,7 @@ void switchScreen(){
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen =='start-screen' 
-          ? StartScreen(switchScreen) 
-          : const QuestionsScreen(),
+          child: screenWidet,
     ),
   ),
   );
