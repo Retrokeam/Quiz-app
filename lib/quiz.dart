@@ -34,12 +34,12 @@ void chooseAnswer(String answer) {
     });
   }
 }
-// void restartQuiz(){
-//   setState(() {
-//     selectedAnswers = [];
-//     activeScreen = 'questions-screen';
-//   });
-// }
+void restartQuiz(){
+  setState(() {
+    selectedAnswers = [];
+    activeScreen = 'questions-screen';
+  });
+}
 
 // @override  
   Widget build(context){
@@ -53,7 +53,7 @@ void chooseAnswer(String answer) {
     if (activeScreen == 'result-screen') {
       screenWidet = ResultScreen(
         choosenAnswers: selectedAnswers,
-        // onRestart: restartQuiz,
+        onRestart: restartQuiz,
         
         );
     }
